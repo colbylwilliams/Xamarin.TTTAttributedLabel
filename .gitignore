@@ -220,4 +220,5 @@ extern/Release-iphoneos
 extern/Release-iphonesimulator
 extern/Release-iphoneuniversal
 extern/TTTAttributedLabel
+extern/Xamarin.TTTAttributedLabel.*
 

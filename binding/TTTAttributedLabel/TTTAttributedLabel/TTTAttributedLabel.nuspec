@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Xamarin.TTTAttributedLabel</id>
+    <version>1.13.4</version>
+    <title>Xamarin.TTTAttributedLabel</title>
+    <authors>Colby Williams</authors>
+    <owners>Colby Williams</owners>
+    <projectUrl>https://github.com/colbylwilliams/Xamarin.TTTAttributedLabel</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin.iOS binding for TTTAttributedLabel</description>
+    <releaseNotes>Initial binding release.</releaseNotes>
+    <copyright>Copyright © 2016 Colby Williams</copyright>
+    <tags>Xamarin Xamarin.iOS iOS Unified TTTAttributedLabel</tags>
+  </metadata>
+  <files>
+    <file src="bin/Release/Xamarin.TTTAttributedLabel.dll" target="lib\Xamarin.iOS\Xamarin.TTTAttributedLabel.dll" />
+  </files>
+</package>
