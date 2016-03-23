@@ -216,5 +216,8 @@ Thumbs.db
 .bitrise*
 
 #extern
-Release-iphoneos
-Release-iphonesimulator
+extern/Release-iphoneos
+extern/Release-iphonesimulator
+extern/Release-iphoneuniversal
+extern/TTTAttributedLabel
+

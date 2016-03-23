@@ -43,16 +43,10 @@
 		<ObjcBindingCoreSource Include="Structs.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<NativeReference Include="..\..\..\extern\Release-iphoneos\TTTAttributedLabel.framework">
-			<Kind>Framework</Kind>
-			<SmartLink>False</SmartLink>
-		</NativeReference>
-	</ItemGroup>
-	<ItemGroup>
-		<NativeReference Include="..\..\..\extern\Release-iphonesimulator\TTTAttributedLabel.framework">
-			<Kind>Framework</Kind>
-			<SmartLink>False</SmartLink>
-		</NativeReference>
+	  <NativeReference Include="..\..\..\extern\Release-iphoneuniversal\TTTAttributedLabel.framework">
+	    <Kind>Framework</Kind>
+	    <SmartLink>False</SmartLink>
+	  </NativeReference>
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
