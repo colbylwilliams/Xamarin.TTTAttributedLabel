@@ -37,16 +37,20 @@
 		<Compile Include="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-	</ItemGroup>
-	<ItemGroup>
-		<ObjcBindingCoreSource Include="Structs.cs" />
-	</ItemGroup>
-	<ItemGroup>
 	  <NativeReference Include="..\..\..\extern\Release-iphoneuniversal\TTTAttributedLabel.framework">
 	    <Kind>Framework</Kind>
 	    <SmartLink>False</SmartLink>
 	  </NativeReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <ObjcBindingApiDefinition Include="..\..\..\extern\Release-binding\ApiDefinitions.cs">
+	    <Link>ApiDefinitions.cs</Link>
+	  </ObjcBindingApiDefinition>
+	</ItemGroup>
+	<ItemGroup>
+	  <ObjcBindingCoreSource Include="..\..\..\extern\Release-binding\StructsAndEnums.cs">
+	    <Link>StructsAndEnums.cs</Link>
+	  </ObjcBindingCoreSource>
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>

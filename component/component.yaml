@@ -1,0 +1,24 @@
+%YAML 1.2
+---
+is_shell: true
+# libraries:
+  # ios: ../lib/ios/Awesome.dll
+packages:
+  "": Xamarin.TTTAttributedLabel, Version=2.0.0
+icons:
+  - Xamarin.TTTAttributedLabel_128x128.png
+  - Xamarin.TTTAttributedLabel_512x512.png
+version: 2.0.0
+details: Details.md
+getting-started: GettingStarted.md
+samples:
+  iOS Sample: ../samples/AwesomeSample/AwesomeSample.sln
+id: Xamarin.TTTAttributedLabel
+summary: A drop-in replacement for UILabel that supports attributes, data detectors, links, and more
+publisher-url: https://github.com/colbylwilliams
+license: License.md
+screenshots:
+  - screenshots/screenshot1.png
+name: Xamarin.TTTAttributedLabel
+publisher: Colby Williams
+...

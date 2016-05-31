@@ -1,4 +1,4 @@
-IOS_RELEASE=1.13.4
+IOS_RELEASE=2.0.0
 
 CONFIGURATION=Release
 
@@ -26,12 +26,21 @@ $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK) : $(CONFIGURATION)-iphonesimulator
 	cp -r $(CONFIGURATION)-iphoneos/$(FRAMEWORK)/. $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
 	lipo $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK)/$(TARGET) $(CONFIGURATION)-iphoneos/$(FRAMEWORK)/$(TARGET) -create -output $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)/$(TARGET)
 
-../binding/TTTAttributedLabel/TTTAttributedLabel/bin/$(CONFIGURATION)/Xamarin.TTTAttributedLabel.dlla : $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
+$(CONFIGURATION)-binding/ApiDefinitions.cs : $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
+	mkdir -p $(CONFIGURATION)-binding
+	sharpie bind \
+		-n Xamarin.TTTAttributedLabel \
+		-o $(CONFIGURATION)-binding \
+		-sdk iphoneos \
+		TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.h
+
+../binding/TTTAttributedLabel/TTTAttributedLabel/bin/$(CONFIGURATION)/Xamarin.TTTAttributedLabel.dll : $(CONFIGURATION)-binding/ApiDefinitions.cs
 	cd ../binding/TTTAttributedLabel/TTTAttributedLabel && XBuild /p:Configuration=$(CONFIGURATION)
 	#cd ../binding/TTTAttributedLabel/TTTAttributedLabel && nuget pack TTTAttributedLabel.csproj
 
 clean :
 	rm -rf TTTAttributedLabel
+	rm -rf $(CONFIGURATION)-binding
 	rm -rf $(CONFIGURATION)-iphoneos
 	rm -rf $(CONFIGURATION)-iphonesimulator
 	rm -rf $(CONFIGURATION)-iphoneuniversal
