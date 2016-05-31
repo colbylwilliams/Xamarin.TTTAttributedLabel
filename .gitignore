@@ -216,9 +216,12 @@ Thumbs.db
 .bitrise*
 
 #extern
+extern/Release-binding
 extern/Release-iphoneos
 extern/Release-iphonesimulator
 extern/Release-iphoneuniversal
 extern/TTTAttributedLabel
 extern/Xamarin.TTTAttributedLabel.*
 
+old
+old/*.cs
