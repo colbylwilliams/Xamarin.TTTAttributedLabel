@@ -1,4 +1,4 @@
-# Xamarin.TTTAttributedLabel
+# Xamarin.TTTAttributedLabel ![NuGet](https://img.shields.io/nuget/v/Xamarin.TTTAttributedLabel.svg?label=NuGet)
 
 A Xamarin.iOS binding for [TTTAttributedLabel][0]
 
