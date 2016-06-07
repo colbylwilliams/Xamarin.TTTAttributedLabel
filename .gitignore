@@ -225,3 +225,6 @@ extern/Xamarin.TTTAttributedLabel.*
 
 old
 old/*.cs
+local/TTTAttributedLabel.psd
+
+*.xam

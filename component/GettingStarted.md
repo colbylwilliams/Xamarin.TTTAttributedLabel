@@ -1,4 +1,4 @@
-# Getting Started with Xamarin.TTTAttributedLabel
+# Getting Started with TTTAttributedLabel
 
 `TTTAttributedLabel` can display both plain and attributed text: just pass an `NSString` or `NSAttributedString` to the `SetText`. Never assign to the `AttributedText` property.
 

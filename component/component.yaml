@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 name: TTTAttributedLabel
-id: Xamarin.TTTAttributedLabel
+id: TTTAttributedLabel
 publisher: Colby Williams
 publisher-url: https://github.com/colbylwilliams
 summary: A drop-in replacement for UILabel that supports attributes, data detectors, links, and more
@@ -13,6 +13,7 @@ getting-started: GettingStarted.md
 license: License.md
 
 is_shell: true
+no_build: true
 
 packages:
   ios-unified:
@@ -20,18 +21,18 @@ packages:
 # libraries:
 #   ios-unified:
 #     -
-local-nuget-repo: ../../
+local-nuget-repo: ../
 
 icons:
-  - Xamarin.TTTAttributedLabel_128x128.png
-  - Xamarin.TTTAttributedLabel_512x512.png
+  - TTTAttributedLabel_128x128.png
+  - TTTAttributedLabel_512x512.png
 
-samples:
-  iOS Sample: ../samples/SimpleChat/SimpleChat.sln
+# samples:
+#   iOS Sample: ../samples/SimpleChat/SimpleChat.sln
 
 samples:
   - name: Simple
-    path: ../../samples/SimpleChat/SimpleChat.sln
+    path: ../samples/SimpleChat/SimpleChat.sln
     # removeProjects:
       # - Square.SocketRocket
     installNuGets:
