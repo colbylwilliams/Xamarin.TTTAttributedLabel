@@ -28,18 +28,20 @@ $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK) : $(CONFIGURATION)-iphonesimulator
 
 $(CONFIGURATION)-binding/ApiDefinitions.cs : $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
 	mkdir -p $(CONFIGURATION)-binding
-	sharpie bind \
-		-n Xamarin.TTTAttributedLabel \
-		-o $(CONFIGURATION)-binding \
-		-sdk iphoneos \
-		TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.h
+	cp extras/ApiDefinitions.cs $(CONFIGURATION)-binding
+	cp extras/StructsAndEnums.cs $(CONFIGURATION)-binding
+	# sharpie bind \
+	# 	-n Xamarin.TTTAttributedLabel \
+	# 	-o $(CONFIGURATION)-binding \
+	# 	-sdk iphoneos \
+	# 	TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.h
 
 ../binding/TTTAttributedLabel/TTTAttributedLabel/bin/$(CONFIGURATION)/Xamarin.TTTAttributedLabel.dll : $(CONFIGURATION)-binding/ApiDefinitions.cs
 	cd ../binding/TTTAttributedLabel/TTTAttributedLabel && XBuild /p:Configuration=$(CONFIGURATION)
 	#cd ../binding/TTTAttributedLabel/TTTAttributedLabel && nuget pack TTTAttributedLabel.csproj
 
 clean :
-	rm -rf TTTAttributedLabel
+	# rm -rf TTTAttributedLabel
 	rm -rf $(CONFIGURATION)-binding
 	rm -rf $(CONFIGURATION)-iphoneos
 	rm -rf $(CONFIGURATION)-iphonesimulator

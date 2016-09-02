@@ -5,7 +5,7 @@ id: TTTAttributedLabel
 publisher: Colby Williams
 publisher-url: https://github.com/colbylwilliams
 summary: A drop-in replacement for UILabel that supports attributes, data detectors, links, and more
-version: 2.0.0
+version: 2.0.0.1
 src-url: https://github.com/colbylwilliams/Xamarin.TTTAttributedLabel
 
 details: Details.md
@@ -17,7 +17,7 @@ no_build: true
 
 packages:
   ios-unified:
-    - Xamarin.TTTAttributedLabel, Version=2.0.0
+    - Xamarin.TTTAttributedLabel, Version=2.0.0.1
 # libraries:
 #   ios-unified:
 #     -
