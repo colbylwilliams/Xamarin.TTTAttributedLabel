@@ -14,11 +14,11 @@ TTTAttributedLabel/README.md :
 	cd TTTAttributedLabel && git checkout $(IOS_RELEASE)
 
 $(CONFIGURATION)-iphoneos/$(FRAMEWORK) : TTTAttributedLabel/README.md
-	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphoneos -configuration $(CONFIGURATION) clean build
+	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) OTHER_CFLAGS="-fembed-bitcode" -project $(PROJECT) -target $(TARGET) -sdk iphoneos -configuration $(CONFIGURATION) clean build
 	-mv TTTAttributedLabel/Carthage/build/$(CONFIGURATION)-iphoneos ./
 
 $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK) : $(CONFIGURATION)-iphoneos/$(FRAMEWORK)
-	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration $(CONFIGURATION) clean build
+	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) OTHER_CFLAGS="-fembed-bitcode" -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration $(CONFIGURATION) clean build
 	-mv TTTAttributedLabel/Carthage/build/$(CONFIGURATION)-iphonesimulator ./
 
 $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK) : $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK)
@@ -38,7 +38,7 @@ $(CONFIGURATION)-binding/ApiDefinitions.cs : $(CONFIGURATION)-iphoneuniversal/$(
 
 ../binding/TTTAttributedLabel/TTTAttributedLabel/bin/$(CONFIGURATION)/Xamarin.TTTAttributedLabel.dll : $(CONFIGURATION)-binding/ApiDefinitions.cs
 	cd ../binding/TTTAttributedLabel/TTTAttributedLabel && XBuild /p:Configuration=$(CONFIGURATION)
-	#cd ../binding/TTTAttributedLabel/TTTAttributedLabel && nuget pack TTTAttributedLabel.csproj
+	cd ../binding/TTTAttributedLabel/TTTAttributedLabel && nuget pack TTTAttributedLabel.nuspec
 
 clean :
 	# rm -rf TTTAttributedLabel

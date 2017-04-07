@@ -15,6 +15,6 @@ Release Notes: https://github.com/TTTAttributedLabel/TTTAttributedLabel/releases
     <tags>Xamarin Xamarin.iOS iOS Unified TTTAttributedLabel</tags>
   </metadata>
   <files>
-    <file src="bin/Release/Xamarin.TTTAttributedLabel.dll" target="lib\Xamarin.iOS\Xamarin.TTTAttributedLabel.dll" />
+    <file src="bin/Release/Xamarin.TTTAttributedLabel.dll" target="lib/Xamarin.iOS/Xamarin.TTTAttributedLabel.dll" />
   </files>
 </package>
