@@ -1,47 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>{11775894-0AB1-47E9-929C-E9C1F07B0931}</ProjectGuid>
-		<ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-		<OutputType>Library</OutputType>
+		<TargetFramework>net7.0-ios</TargetFramework>
+		<IsBindingProject>true</IsBindingProject>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<CreatePackage>false</CreatePackage>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
 		<RootNamespace>Xamarin.TTTAttributedLabel</RootNamespace>
 		<AssemblyName>Xamarin.TTTAttributedLabel</AssemblyName>
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<ConsolePause>false</ConsolePause>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<PackageId>Xamarin.TTTAttributedLabel</PackageId>
+		<PackageVersion>2.0.1</PackageVersion>
+		<Title>Xamarin.TTTAttributedLabel</Title>
+		<Authors>Colby Williams</Authors>
+		<ProjectUrl>https://github.com/colbylwilliams/Xamarin.TTTAttributedLabel</ProjectUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<Description>Xamarin.iOS (net7.0-ios) binding for TTTAttributedLabel</Description>
+		<PackageReleaseNotes>The binding has been updated to TTTAttributedLabel version 2.0.1, recompiled with net7.0-ios tfm binding of https://github.com/TTTAttributedLabel/TTTAttributedLabel</PackageReleaseNotes>
+		<Copyright>Copyright © 2016 Colby Williams</Copyright>
+		<PackageTags>Xamarin Xamarin.iOS iOS net7 net7.0-ios TTTAttributedLabel</PackageTags>
 	</PropertyGroup>
+
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
 		<Optimize>false</Optimize>
 		<OutputPath>bin\Debug</OutputPath>
-		<DefineConstants>DEBUG;</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-		<ConsolePause>false</ConsolePause>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;NET;NET7_0;NETCOREAPP</DefineConstants>
 	</PropertyGroup>
+
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <DebugSymbols>true</DebugSymbols>
 		<Optimize>true</Optimize>
 		<OutputPath>bin\Release</OutputPath>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-		<ConsolePause>false</ConsolePause>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System" />
-		<Reference Include="Xamarin.iOS" />
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
+
 	<ItemGroup>
 	  <NativeReference Include="..\..\..\extern\Release-iphoneuniversal\TTTAttributedLabel.framework">
 	    <Kind>Framework</Kind>
 	    <SmartLink>False</SmartLink>
 	  </NativeReference>
 	</ItemGroup>
+
 	<ItemGroup>
 	  <ObjcBindingApiDefinition Include="..\..\..\extern\Release-binding\ApiDefinitions.cs">
 	    <Link>ApiDefinitions.cs</Link>
@@ -52,5 +57,4 @@
 	    <Link>StructsAndEnums.cs</Link>
 	  </ObjcBindingCoreSource>
 	</ItemGroup>
-	<Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
