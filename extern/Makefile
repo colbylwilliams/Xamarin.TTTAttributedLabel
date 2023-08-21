@@ -18,13 +18,13 @@ $(CONFIGURATION)-iphoneos/$(FRAMEWORK) : TTTAttributedLabel/README.md
 	-mv TTTAttributedLabel/Carthage/build/$(CONFIGURATION)-iphoneos ./
 
 $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK) : $(CONFIGURATION)-iphoneos/$(FRAMEWORK)
-	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) OTHER_CFLAGS="-fembed-bitcode" -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration $(CONFIGURATION) clean build
+	cd TTTAttributedLabel/Carthage && $(XCODEBUILD) OTHER_CFLAGS="-fembed-bitcode" -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration $(CONFIGURATION) EXCLUDED_ARCHS="arm64" clean build
 	-mv TTTAttributedLabel/Carthage/build/$(CONFIGURATION)-iphonesimulator ./
 
 $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK) : $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK)
 	mkdir -p $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
 	cp -r $(CONFIGURATION)-iphoneos/$(FRAMEWORK)/. $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
-	lipo $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK)/$(TARGET) -create -output $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)/$(TARGET)
+	lipo $(CONFIGURATION)-iphonesimulator/$(FRAMEWORK)/$(TARGET) $(CONFIGURATION)-iphoneos/$(FRAMEWORK)/$(TARGET) -create -output $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)/$(TARGET)
 
 $(CONFIGURATION)-binding/ApiDefinitions.cs : $(CONFIGURATION)-iphoneuniversal/$(FRAMEWORK)
 	mkdir -p $(CONFIGURATION)-binding
