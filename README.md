@@ -1,10 +1,10 @@
 # Xamarin.TTTAttributedLabel ![NuGet](https://img.shields.io/nuget/v/Xamarin.TTTAttributedLabel.svg?label=NuGet)
 
-A Xamarin.iOS binding for [TTTAttributedLabel][0]
+A Xamarin.iOS binding (compiled with net7.0-ios target) for [TTTAttributedLabel][0]
 
 
 ## Installation
-Either add the [NuGet package][2] or [Component][3] to your Xamarin.iOS project (recommended), or clone this repo, build using the steps below, and reference the TTTAttributedLabel project from your Xamarin.iOS project.
+Add the [NuGet package][2] to your Xamarin.iOS project (recommended), or clone this repo, build using the steps below, and reference the TTTAttributedLabel project from your Xamarin.iOS project.
 
 
 ## Usage
@@ -84,4 +84,3 @@ To build, run `make` in the `extern` directory. Then open `bindings/TTTAttribute
 [0]:https://github.com/TTTAttributedLabel/TTTAttributedLabel
 [1]:https://github.com/TTTAttributedLabel/TTTAttributedLabel#usage
 [2]:https://www.nuget.org/packages/Xamarin.TTTAttributedLabel
-[3]:https://components.xamarin.com/view/tttattributedlabel

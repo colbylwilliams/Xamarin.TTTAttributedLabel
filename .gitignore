@@ -6,6 +6,8 @@
 *.user
 *.sln.docstates
 *.userprefs
+# Visual Studio cache/options directory
+.vs/
 
 # Xamarin.Android
 Resource.designer.cs
